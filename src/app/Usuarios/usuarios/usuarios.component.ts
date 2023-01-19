@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UsuariosService } from 'src/app/Servicios/usuario-s.service';
+
 
 @Component({
   selector: 'app-usuarios',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent {
+  title = 'Usuarios';
+  public usuarios:Array<any>=[]
+  
+  constructor(
+    private usuariosService:UsuariosService
+  ){}
 
+  clickMostrar() {
+    this.usuariosService.getUsuarios().subscribe((resp:any) => {
+      this.usuarios=resp 
+    })
+  }
 }
