@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UsuariosService } from 'src/app/Servicios/usuario-s.service';
 
 
+
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
